@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        padding: 2rem
+      }
+      form {
+       margin: auto;
+       max-width: 80vw; 
+      }
+      button, input {
+        padding: .5rem;
+      }
+    </style>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Satchel Options</title>
+  </head>
+  <body>
+    <form>
+      <h1>Satchel Extension Options</h1>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="performBadgeUpdates">
+        <label class="form-check-label" for="performBadgeUpdates">Update Badge</label>
+        <small class="form-text text-muted">Query BMAP Planaria for new comments when visiting websites.</small>
+      </div>
+      <div class="form-group">
+        <label for="endpoint">BMAP Endpoint</label>
+        <input type="url" class="form-control" id="endpoint" aria-describedby="endpoint" placeholder="https://b.map.sv">
+      </div>
+      <div id="status"></div>
+      <br />
+      <button id="save" type="button" class="btn btn-primary">Save</button>
+    </form>
+    <script src="options.js"></script>
+  </body>
+</html>
