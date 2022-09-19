@@ -19,7 +19,9 @@ const init = (request = {}, txhash = null) => {
       //if (!url || url !== tabs[0].url) {
         url = tabs[0].url
         console.log('!@!!!!!!', c, url)
-        o.setAttribute("src", c + 'url/' + encodeURIComponent(url))
+        const params = new URLSearchParams(window.location.search)
+        const abi = params.get("abi")
+        o.setAttribute("src", c + '?abi=' + abi)
       //} else {
         //console.log('problem land', tabs)
       //}

@@ -178,7 +178,6 @@ chrome.runtime.onMessage.addListener((message,sender,sendResponse) => {
   if (message.type == "FROM_CONTENT") {
     console.log('background: message from content script!')
     chrome.windows.create(message.options)
-    popup.cancel()  
     sendResponse()
   }
 

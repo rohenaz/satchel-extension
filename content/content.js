@@ -22,15 +22,16 @@ window.addEventListener("message", function(event) {
     console.log("Content script received: ", action)
     // port.postMessage(action)
 
-    chrome.runtime.sendMessage({type: "FROM_CONTENT", options: {
+    let options = {
       type: 'popup',
       focused: true,
       top: 0,
       left: 0,
       width: 420,
       height: 800,
-      url: 'popup/popup.html'
-  }})
+      url: 'popup/popup.html?abi=' + window.btoa(event.data.action)
+    }
+    chrome.runtime.sendMessage({type: "FROM_CONTENT", options: options})
 
   }
 }, false)
